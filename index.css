@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.wrapper {
+  max-width: calc(1200px - 10px);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+header {
+  padding: 20px 0;
+  background: #000;
+}
+
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav {
+  margin: 0 20px 0 auto;
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+header nav ul li:not(:last-child) {
+  margin: 0 20px 0 0;
+}
+
+header nav ul li > a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: normal;
+}
+header nav ul li > a:hover {
+  color: #f90;
+  transition: all 0.1s ease;
+}
+
+header .logo {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* -------------------------------- main-body ------------------------------- */
+.main-body {
+  padding: 50px 0;
+  background-color: #f4f4f4;
+}
+.main-body .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.main-body .wrapper .card {
+  width: calc(33.33% - 20px);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  min-height: 350px;
+  background-color: #fff;
+}
+
+.main-body .wrapper .card:hover {
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+}
+
+.main-body .wrapper .card > img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.main-body .wrapper .card > h2 {
+  margin: 10px 0;
+  color: #000;
+}
+
+.main-body .wrapper .card > h3 {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 16px;
+  color: #000;
+  margin: 0 0 10px;
+}
+
+.main-body .search-container {
+  margin: 0 0 30px;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.search-container .input-v1 {
+  max-width: 500px;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 40px;
+  outline: none;
+  border: 1px solid rebeccapurple;
+}
+
+.btn {
+  border-radius: 40px;
+  padding: 10px 20px;
+  font-size: 14px;
+  line-height: 18px;
+  outline: none;
+  border: none;
+}
+
+.btn-v1 {
+  background: rebeccapurple;
+  color: #fff;
+}
+
+/* --------------------------------- footer --------------------------------- */
+footer {
+  padding: 40px 0;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
