@@ -145,3 +145,8 @@ footer {
   color: #fff;
   text-align: center;
 }
+
+/* --------------------------------- shimmer -------------------------------- */
+.shimmer .card {
+  background-color: rgb(237, 206, 206) !important;
+}
