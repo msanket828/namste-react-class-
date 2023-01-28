@@ -206,6 +206,6 @@ footer {
 
 .restaurant-menu .restaurant-menu__menudetail .restaurant-menu-item > img {
   max-width: 100%;
-  height: 100px;
+  height: 150px;
   object-fit: contain;
 }
