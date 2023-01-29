@@ -2,12 +2,17 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import RestaurantCard from "./RestuarantCard";
 import Shimmer from "./Shimmer";
+import { filterData } from "../utils/helpers";
+import useOnline from "../utils/useOnline";
 
 /* -------------------------------- main-body ------------------------------- */
+
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const isOnline = useOnline();
+
   useEffect(() => {
     getRestaurantList();
   }, []);
@@ -25,15 +30,17 @@ const Body = () => {
     setSearchText(e.target.value);
   };
 
-  const handleSearchClick = (e) => {
-    e.preventDefault();
-    const filterData = allRestaurants.filter((restaurant) => {
-      return restaurant.data.name
-        .toLowerCase()
-        .includes(searchText.toLowerCase());
-    });
-    setFilteredRestaurants(filterData);
+  const onSearchClicked = () => {
+    setFilteredRestaurants(filterData(searchText, allRestaurants));
   };
+  //custom hook
+  if (!isOnline) {
+    return (
+      <div className="main-body">
+        <h1>you are offline</h1>
+      </div>
+    );
+  }
 
   //render allRestaurants
   return allRestaurants.length === 0 ? (
@@ -55,7 +62,7 @@ const Body = () => {
             type="button"
             role="button"
             className="btn btn-v1"
-            onClick={handleSearchClick}
+            onClick={onSearchClicked}
           >
             Search
           </button>

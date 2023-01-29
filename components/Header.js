@@ -26,7 +26,7 @@ const Header = () => {
               <NavLink to="about">about</NavLink>
             </li>
             <li>
-              <NavLink to="contact">contact</NavLink>
+              <NavLink to="instamart">instamart</NavLink>
             </li>
             <li>
               <a href="#FIXME">Cart</a>
