@@ -209,3 +209,25 @@ footer {
   height: 150px;
   object-fit: contain;
 }
+
+/* ---------------------------- accordion section --------------------------- */
+.accordion {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin: 0 0 10px;
+}
+
+.accordion-wrapper {
+  max-width: calc(1200px - 10px);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.accordion .accordion-header {
+  margin: 0 0 15px;
+}
+
+.accordion .accordion-body {
+  margin: 15px 0;
+}
