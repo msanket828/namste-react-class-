@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UserContext from "../contexts/UserContext";
 
 const Section = (props) => {
   const { title, content, isVisible, setIsVisible } = props;
@@ -23,9 +24,13 @@ const Section = (props) => {
 
 const Instamart = () => {
   const [visible, setVisibleSection] = useState("Second Section");
+  const { user } = useContext(UserContext);
   return (
     <div className="main-body">
       <div className="accordion-wrapper">
+        <div>
+          <h3>{user.name}</h3>
+        </div>
         <Section
           isVisible={visible == "First Section"}
           setIsVisible={(display) => {
