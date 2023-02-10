@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import IMG_CDN_URL from "../constants";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantMenuCard from "./RestaurantMenuCard";
 import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
@@ -29,18 +30,7 @@ const RestaurantMenu = () => {
         <div className="restaurant-menu__menudetail">
           <ul>
             {Object.values(restaurantMenu.menu.items).map((item) => {
-              return (
-                <li className="restaurant-menu-item" key={item.id}>
-                  <p className="restaurant-menu-name">{item.name}</p>
-                  {item?.cloudinaryImageId && (
-                    <img
-                      src={`${IMG_CDN_URL}${item?.cloudinaryImageId}`}
-                      alt=""
-                    />
-                  )}
-                  <p></p>
-                </li>
-              );
+              return <RestaurantMenuCard item={item} key={item.id} />;
             })}
           </ul>
         </div>

@@ -3,7 +3,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="wrapper">
-        <h2>&copy;{year} All rights reserve.</h2>
+        <p>&copy;{year} All rights reserve.</p>
       </div>
     </footer>
   );

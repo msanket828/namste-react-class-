@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-
+import store from "../utils/store";
 /* --------------------------------- Header --------------------------------- */
 const Header = () => {
+  const cartCount = useSelector((store) => store.cart.items);
   const [loggedIn, setLoggedIn] = useState(false);
 
   const handleLoggedIn = (e) => {
@@ -20,16 +22,39 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="about">about</NavLink>
+              <NavLink
+                to="about"
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+              >
+                about
+              </NavLink>
             </li>
             <li>
-              <NavLink to="instamart">instamart</NavLink>
+              <NavLink
+                to="instamart"
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+              >
+                instamart
+              </NavLink>
             </li>
             <li>
-              <a href="#FIXME">Cart</a>
+              <NavLink
+                to="cart"
+                className={({ isActive }) =>
+                  isActive ? "cart active" : "cart inactive"
+                }
+              >
+                Cart
+                {cartCount.length > 0 && <span>{cartCount.length}</span>}
+              </NavLink>
             </li>
           </ul>
         </nav>

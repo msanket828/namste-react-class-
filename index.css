@@ -22,6 +22,9 @@ body {
 header {
   padding: 20px 0;
   background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 header .wrapper {
@@ -48,9 +51,35 @@ header nav ul li > a {
   color: #fff;
   font-weight: normal;
 }
-header nav ul li > a:hover {
+header nav ul li > a:hover,
+header nav ul li > a.active {
   color: #f90;
   transition: all 0.1s ease;
+}
+
+header nav ul li > a:hover span,
+header nav ul li > a.active span {
+  color: #fff;
+}
+
+header nav a.cart {
+  position: relative;
+}
+
+header nav a.cart > span {
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #f90;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 14px;
 }
 
 header .logo {
@@ -142,10 +171,21 @@ a.card {
   line-height: 18px;
   outline: none;
   border: none;
+  font-weight: 550;
 }
 
 .btn-v1 {
   background: rebeccapurple;
+  color: #fff;
+}
+
+.btn-v2 {
+  background-color: green;
+  color: #fff;
+}
+
+.btn-v3 {
+  background-color: red;
   color: #fff;
 }
 
@@ -175,7 +215,7 @@ footer {
 
 .restaurant-menu .restaurant-menu__info {
   position: sticky;
-  top: 10px;
+  top: 90px;
   z-index: 100;
 }
 .restaurant-menu .restaurant-menu__info,
@@ -190,6 +230,43 @@ footer {
   margin: 0 0 10px;
 }
 
+.restaurant-menu .restaurant-menu-divider {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.restaurant-menu .restaurant-menu-divider div:first-child {
+  width: 70%;
+}
+
+.restaurant-menu .restaurant-menu-divider div:first-child .menu-type-container {
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px;
+}
+
+.restaurant-menu
+  .restaurant-menu-divider
+  div:first-child
+  .menu-type-container
+  span {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 10px;
+}
+
+.restaurant-menu .restaurant-menu-divider div:last-child {
+  width: 30%;
+}
+
+.restaurant-menu .restaurant-menu-divider div:first-child p {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
 .restaurant-menu .restaurant-menu__menudetail .restaurant-menu-item {
   padding: 10px;
   margin: 0 0 10px;
@@ -197,17 +274,36 @@ footer {
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
+
 .restaurant-menu .restaurant-menu__menudetail .restaurant-menu-name {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 22px;
+  line-height: 24px;
   font-weight: bold;
-  margin: 0 0 20px;
 }
 
-.restaurant-menu .restaurant-menu__menudetail .restaurant-menu-item > img {
-  max-width: 100%;
+hr {
+  margin: 0 0 15px;
+}
+
+.restaurant-menu .restaurant-menu-divider .menu-type {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.restaurant-menu .restaurant-menu-divider .menu-img {
+  max-width: 200px;
   height: 150px;
   object-fit: contain;
+  display: block;
+  margin: 0 0 15px;
+}
+
+.restaurant-menu .restaurant-menu-price {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 550;
+  margin: 0 0 15px;
 }
 
 /* ---------------------------- accordion section --------------------------- */
@@ -230,4 +326,12 @@ footer {
 
 .accordion .accordion-body {
   margin: 15px 0;
+}
+
+/* ---------------------------------- cart ---------------------------------- */
+.cart-wrapper {
+  max-width: calc(1200px - 10px);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
 }
