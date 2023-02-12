@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { addItem, removeItem } from "../utils/cartSlice";
 import nonVegIcon from "../assets/images/non-veg.png";
 import vegIcon from "../assets/images/veg.png";
+import IMG_CDN_URL from "../constants";
 
 const RestaurantMenuCard = ({ item }) => {
   const [isItemAdded, setIsItemAdded] = useState(false);

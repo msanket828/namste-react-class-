@@ -1,8 +1,22 @@
+import { useSelector } from "react-redux";
+import CartItems from "./CartItems";
+import CartItemsTotal from "./CartItemsTotal";
+import RestaurantMenuCard from "./RestaurantMenuCard";
+
 const Cart = () => {
+  const cartItems = useSelector((store) => store.cart.items);
+
   return (
     <div className="main-body">
       <div className="cart-wrapper">
-        <h2>Cart component</h2>
+        {cartItems.length <= 0 ? (
+          <h2>No items in your cart</h2>
+        ) : (
+          <div className="cart-page-divider">
+            <CartItems cartItems={cartItems} />
+            <CartItemsTotal />
+          </div>
+        )}
       </div>
     </div>
   );
