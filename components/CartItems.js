@@ -3,6 +3,8 @@ import nonVegIcon from "../assets/images/non-veg.png";
 import vegIcon from "../assets/images/veg.png";
 import { useDispatch } from "react-redux";
 import { removeItem } from "../utils/cartSlice";
+import { useEffect, useState } from "react";
+import QuantityItem from "./QuantityItem";
 
 const CartItems = (props) => {
   const dispatch = useDispatch();
@@ -10,7 +12,7 @@ const CartItems = (props) => {
   const removeFoodItem = (item) => {
     dispatch(removeItem(item));
   };
-  console.log(props);
+
   return (
     <div className="cart-items">
       {props.cartItems.map((cartItem) => (
@@ -42,6 +44,7 @@ const CartItems = (props) => {
               </div>
             )}
             <h3>Rs. {cartItem.price / 100}</h3>
+            
             <button
               className="btn btn-v3"
               onClick={() => removeFoodItem(cartItem)}

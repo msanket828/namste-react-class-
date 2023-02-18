@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearAllItems } from "../utils/cartSlice";
+import QuantityItem from "./QuantityItem";
 
 const CartItemsTotal = () => {
   const dispatch = useDispatch();
@@ -7,8 +9,6 @@ const CartItemsTotal = () => {
   const calculateItemsTotal = cartItems.reduce((prev, curr) => {
     return prev + curr.price / 100;
   }, 0);
-
-  console.log(cartItems);
   return (
     <>
       <div className="cart-items-total">
@@ -33,7 +33,7 @@ const CartItemsTotal = () => {
           })}
           <li>
             <h2>Grand Total</h2>
-            <p>Rs. {calculateItemsTotal}</p>
+            <p>Rs. {calculateItemsTotal.toFixed(2)}</p>
           </li>
         </ul>
       </div>

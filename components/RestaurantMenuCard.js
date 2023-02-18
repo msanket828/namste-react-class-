@@ -1,12 +1,26 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addItem, removeItem } from "../utils/cartSlice";
+import { addCount, addItem, removeItem, subCount } from "../utils/cartSlice";
 import nonVegIcon from "../assets/images/non-veg.png";
 import vegIcon from "../assets/images/veg.png";
 import IMG_CDN_URL from "../constants";
+import QuantityItem from "./QuantityItem";
 
 const RestaurantMenuCard = ({ item }) => {
   const [isItemAdded, setIsItemAdded] = useState(false);
+  const [count, setCount] = useState(1);
+  const handleInc = () => {
+    setCount((prevCount) => prevCount + 1);
+    dispatch(addCount({ ...item, itemScore: count + 1 }));
+  };
+  const handleDec = () => {
+    if (count < 2) {
+      setCount(count);
+    } else {
+      setCount((prevCount) => prevCount - 1);
+      dispatch(subCount({ ...item, itemScore: count - 1 }));
+    }
+  };
   const dispatch = useDispatch();
 
   const addFoodItem = (item) => {
@@ -57,9 +71,19 @@ const RestaurantMenuCard = ({ item }) => {
               Add Item
             </button>
           ) : (
-            <button className="btn btn-v3" onClick={() => removeFoodItem(item)}>
-              Remove Item
-            </button>
+            <>
+              <button
+                className="btn btn-v3"
+                onClick={() => removeFoodItem(item)}
+              >
+                Remove Item
+              </button>
+              <QuantityItem
+                handleInc={handleInc}
+                handleDec={handleDec}
+                count={count}
+              />
+            </>
           )}
         </div>
       </div>

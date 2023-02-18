@@ -254,7 +254,7 @@ footer {
 
 .restaurant-menu
   .restaurant-menu-divider
-  div:first-child
+  .restaurant-menu-left
   .menu-type-container
   span {
   font-weight: bold;
@@ -263,11 +263,11 @@ footer {
   margin-left: 10px;
 }
 
-.restaurant-menu .restaurant-menu-divider div:last-child {
+.restaurant-menu .restaurant-menu-divider .restaurant-menu-right {
   width: 30%;
 }
 
-.restaurant-menu .restaurant-menu-divider div:first-child p {
+.restaurant-menu .restaurant-menu-divider .restaurant-menu-left p {
   font-size: 14px;
   line-height: 18px;
   font-weight: 500;
@@ -436,4 +436,26 @@ hr {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
+}
+
+/* ------------------------------ QuantityItem ------------------------------ */
+.qty-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.qty-container .qty-btn {
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f90;
+  cursor: pointer;
+  user-select: none;
 }
