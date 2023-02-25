@@ -3,6 +3,9 @@ import IMG_CDN_URL from "../constants";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantMenuCard from "./RestaurantMenuCard";
 import Shimmer from "./Shimmer";
+import { FcHome } from "react-icons/fc";
+import { BsStarFill } from "react-icons/bs";
+import { HiLocationMarker } from "react-icons/hi";
 
 const RestaurantMenu = () => {
   const params = useParams();
@@ -16,12 +19,24 @@ const RestaurantMenu = () => {
     <div className="restaurant-menu">
       <div className="wrapper">
         <div className="restaurant-menu__info">
-          <h2 className="restaurant-menu__name">{restaurantMenu.name}</h2>
-          <img src={`${IMG_CDN_URL}${restaurantMenu.cloudinaryImageId}`} />
-          <h3 className="restaurant-menu__area">{restaurantMenu.area}</h3>
-          <h3 className="restaurant-menu__city">{restaurantMenu.city}</h3>
-          <h3 className="rstaurant-menu__rating">
-            {restaurantMenu.avgRating} stars
+          <h2 className="restaurant-menu__name">
+            <FcHome className="icon-lg icon-home" />
+            <span>{restaurantMenu.name}</span>
+          </h2>
+          <img
+            src={`${IMG_CDN_URL}${restaurantMenu.cloudinaryImageId}`}
+            className="image"
+          />
+          <h3 className="restaurant-menu__area">
+            <HiLocationMarker className="icon-sm icon-red" />
+            <span>
+              {restaurantMenu.area}, {restaurantMenu.city}
+            </span>
+          </h3>
+          {/* <h3 className="restaurant-menu__city"></h3> */}
+          <h3 className="retaurant-menu__rating">
+            <BsStarFill className="icon-sm" />
+            <span>{restaurantMenu.avgRating}</span>
           </h3>
           <h3 className="restaurant-menu__costfortwo">
             {restaurantMenu.costForTwoMsg}

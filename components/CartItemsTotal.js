@@ -7,7 +7,7 @@ const CartItemsTotal = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((store) => store.cart.items);
   const calculateItemsTotal = cartItems.reduce((prev, curr) => {
-    return prev + curr.price / 100;
+    return prev + (curr.price * curr.itemScore) / 100;
   }, 0);
   return (
     <>
@@ -27,7 +27,8 @@ const CartItemsTotal = () => {
             return (
               <li key={cartItem.id}>
                 <h2>{cartItem.name}</h2>
-                <p>Rs. {cartItem.price / 100}</p>
+                <h3>{cartItem.itemScore}</h3>
+                <p>Rs. {(cartItem.price * cartItem.itemScore) / 100}</p>
               </li>
             );
           })}

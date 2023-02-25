@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { BiShoppingBag } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import store from "../utils/store";
 /* --------------------------------- Header --------------------------------- */
 const Header = () => {
   const cartCount = useSelector((store) => store.cart.items);
@@ -52,7 +52,8 @@ const Header = () => {
                   isActive ? "cart active" : "cart inactive"
                 }
               >
-                Cart
+                {/* Cart */}
+                <BiShoppingBag className="icon-sm" />
                 {cartCount.length > 0 && <span>{cartCount.length}</span>}
               </NavLink>
             </li>

@@ -8,19 +8,7 @@ import QuantityItem from "./QuantityItem";
 
 const RestaurantMenuCard = ({ item }) => {
   const [isItemAdded, setIsItemAdded] = useState(false);
-  const [count, setCount] = useState(1);
-  const handleInc = () => {
-    setCount((prevCount) => prevCount + 1);
-    dispatch(addCount({ ...item, itemScore: count + 1 }));
-  };
-  const handleDec = () => {
-    if (count < 2) {
-      setCount(count);
-    } else {
-      setCount((prevCount) => prevCount - 1);
-      dispatch(subCount({ ...item, itemScore: count - 1 }));
-    }
-  };
+
   const dispatch = useDispatch();
 
   const addFoodItem = (item) => {
@@ -78,11 +66,6 @@ const RestaurantMenuCard = ({ item }) => {
               >
                 Remove Item
               </button>
-              <QuantityItem
-                handleInc={handleInc}
-                handleDec={handleDec}
-                count={count}
-              />
             </>
           )}
         </div>

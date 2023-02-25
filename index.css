@@ -68,7 +68,7 @@ header nav a.cart {
 
 header nav a.cart > span {
   position: absolute;
-  top: -15px;
+  top: -20px;
   right: -10px;
   display: block;
   width: 20px;
@@ -228,14 +228,64 @@ footer {
 .restaurant-menu .restaurant-menu__menudetail {
   width: calc(50% - 20px);
 }
-
 .restaurant-menu .restaurant-menu__info > .restaurant-menu__name {
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px;
+}
+.icon-lg {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.icon-sm {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+.icon-red {
+  color: red;
+}
+
+.icon-md {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.restaurant-menu .image {
+  margin: 0 0 10px;
+}
+.restaurant-menu .restaurant-menu__info > .restaurant-menu__name span {
   font-size: 28px;
   line-height: 24px;
   font-weight: bold;
-  margin: 0 0 10px;
+  margin: 0 0 0 10px;
 }
 
+.restaurant-menu .restaurant-menu__info .retaurant-menu__rating {
+  display: flex;
+  align-items: center;
+  background-color: green;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 5px 10px;
+  color: #fff;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+.restaurant-menu .restaurant-menu__info .retaurant-menu__rating span {
+  margin: 0 0 0 10px;
+}
+.restaurant-menu .restaurant-menu__info > .restaurant-menu__area {
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px;
+}
+.restaurant-menu .restaurant-menu__info > .restaurant-menu__area span {
+  margin: 0 0 0 10px;
+}
 .restaurant-menu .restaurant-menu-divider {
   display: flex;
   align-items: flex-start;
@@ -442,7 +492,7 @@ hr {
 .qty-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
   margin: 10px 0;
 }
