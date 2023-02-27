@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearAllItems } from "../utils/cartSlice";
-import QuantityItem from "./QuantityItem";
+import { GrClearOption } from "react-icons/gr";
 
 const CartItemsTotal = () => {
   const dispatch = useDispatch();
@@ -14,10 +13,11 @@ const CartItemsTotal = () => {
       <div className="cart-items-total">
         <div className="clear-cart-container">
           <button
-            className="btn btn-v3"
+            className="badge badge-v1"
             onClick={() => dispatch(clearAllItems())}
           >
-            Clear Cart
+            <GrClearOption className="icon-xs" />
+            <span>Cart</span>
           </button>
         </div>
         <h2 className="title">Item with amount</h2>

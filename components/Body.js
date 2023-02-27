@@ -15,6 +15,7 @@ const Body = () => {
 
   useEffect(() => {
     getRestaurantList();
+    window.scrollTo(0, 0);
   }, []);
 
   async function getRestaurantList() {

@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -50,6 +51,7 @@ header nav ul li > a {
   text-decoration: none;
   color: #fff;
   font-weight: normal;
+  text-transform: capitalize;
 }
 header nav ul li > a:hover,
 header nav ul li > a.active {
@@ -201,6 +203,7 @@ a.card {
 
 /* --------------------------------- footer --------------------------------- */
 footer {
+  position: relative;
   padding: 40px 0;
   background: #000;
   color: #fff;
@@ -522,4 +525,34 @@ hr {
   background-color: #f0d4d4;
   cursor: pointer;
   user-select: none;
+}
+
+/* -------------------------- scroll to top button -------------------------- */
+
+.scroll-to-top-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 100px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.badge.badge-v1 {
+  background: cyan;
+}
+
+.badge span {
+  margin: 0 0 0 5px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 550;
 }

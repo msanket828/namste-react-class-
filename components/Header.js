@@ -16,9 +16,9 @@ const Header = () => {
   return (
     <header>
       <div className="wrapper">
-        <a href="#FIXME" className="logo">
+        <NavLink to="/" className="logo">
           <h1>FoodVilla</h1>
-        </a>
+        </NavLink>
         <nav>
           <ul>
             <li>

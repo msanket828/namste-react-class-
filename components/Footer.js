@@ -1,3 +1,5 @@
+import ScrollToTop from "./ScrollToTop";
+
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
@@ -5,6 +7,7 @@ const Footer = () => {
       <div className="wrapper">
         <p>&copy;{year} All rights reserve.</p>
       </div>
+      <ScrollToTop />
     </footer>
   );
 };

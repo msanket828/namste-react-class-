@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -24,13 +24,13 @@ const App = () => {
     name: "sanket mane",
     email: "sanketmane159@gmail.com",
   });
+
   return (
     <Provider store={store}>
       <UserContext.Provider value={{ user: user }}>
         <Header />
         {/* <Body /> */}
         <Outlet />
-
         <Footer />
       </UserContext.Provider>
     </Provider>

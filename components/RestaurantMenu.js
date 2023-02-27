@@ -1,3 +1,5 @@
+import React from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import IMG_CDN_URL from "../constants";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
@@ -12,6 +14,10 @@ const RestaurantMenu = () => {
   const { resId } = params;
   //created custom hook
   const restaurantMenu = useRestaurantMenu(resId);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return !restaurantMenu ? (
     <Shimmer />
