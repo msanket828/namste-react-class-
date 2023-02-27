@@ -5,6 +5,7 @@ import nonVegIcon from "../assets/images/non-veg.png";
 import vegIcon from "../assets/images/veg.png";
 import IMG_CDN_URL from "../constants";
 import QuantityItem from "./QuantityItem";
+import { BiShoppingBag } from "react-icons/bi";
 
 const RestaurantMenuCard = ({ item }) => {
   const [isItemAdded, setIsItemAdded] = useState(false);
@@ -55,16 +56,21 @@ const RestaurantMenuCard = ({ item }) => {
         <div>
           <p className="restaurant-menu-price">Rs.{item.price / 100}</p>
           {!isItemAdded ? (
-            <button className="btn btn-v2" onClick={() => addFoodItem(item)}>
-              Add Item
+            <button
+              className="btn btn-v2 btn-l-icon"
+              onClick={() => addFoodItem(item)}
+            >
+              <BiShoppingBag className="icon-xs" />
+              <span>Add</span>
             </button>
           ) : (
             <>
               <button
-                className="btn btn-v3"
+                className="btn btn-v3 btn-l-icon"
                 onClick={() => removeFoodItem(item)}
               >
-                Remove Item
+                <BiShoppingBag className="icon-xs" />
+                <span>Remove</span>
               </button>
             </>
           )}

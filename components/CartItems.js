@@ -6,6 +6,7 @@ import IMG_CDN_URL from "../constants";
 import { addCount, removeItem, subCount } from "../utils/cartSlice";
 import QuantityItem from "./QuantityItem";
 import { v4 as uuidv4 } from "uuid";
+import { BiShoppingBag } from "react-icons/bi";
 
 const CartItems = (props) => {
   const dispatch = useDispatch();
@@ -48,10 +49,11 @@ const CartItems = (props) => {
 
             <QuantityItem key={cartItem.id} cartItem={cartItem} O />
             <button
-              className="btn btn-v3"
+              className="btn btn-v3 btn-l-icon"
               onClick={() => removeFoodItem(cartItem)}
             >
-              Remove Item
+              <BiShoppingBag className="icon-xs" />
+              <span>Remove</span>
             </button>
           </div>
         </div>

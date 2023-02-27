@@ -4,7 +4,7 @@ import RestaurantCard from "./RestuarantCard";
 import Shimmer from "./Shimmer";
 import { filterData } from "../utils/helpers";
 import useOnline from "../utils/useOnline";
-
+import { BsSearch } from "react-icons/bs";
 /* -------------------------------- main-body ------------------------------- */
 
 const Body = () => {
@@ -61,10 +61,11 @@ const Body = () => {
           <button
             type="button"
             role="button"
-            className="btn btn-v1"
+            className="btn btn-v1 btn-l-icon"
             onClick={onSearchClicked}
           >
-            Search
+            <BsSearch />
+            <span>Search</span>
           </button>
         </div>
       </div>
