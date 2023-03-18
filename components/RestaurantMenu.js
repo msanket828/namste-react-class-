@@ -50,8 +50,8 @@ const RestaurantMenu = () => {
         </div>
         <div className="restaurant-menu__menudetail">
           <ul>
-            {Object.values(restaurantMenu.menu.items).map((item) => {
-              return <RestaurantMenuCard item={item} key={item.id} />;
+            {restaurantMenu.menu.items.map((item) => {
+              return <RestaurantMenuCard MenuCard item={item} key={item.id} />;
             })}
           </ul>
         </div>
